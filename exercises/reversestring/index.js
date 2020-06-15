@@ -15,4 +15,23 @@ function reverse(str) {
 
 }
 
+// function reverse(str) {
+// 	str.split("").reduce((reversed, char) => char + reversed, "");
+// }
+
+// function reverse(str) {
+// 	let reversed = "";
+// 	for (let char in str) {
+// 		reversed = char + reversed;
+// 	}
+// 	return reversed;
+// }
+
+// function reverse(str) {
+// 	return str
+// 		.split("")
+// 		.reverse()
+// 		.join("");
+// }
+
 module.exports = reverse;
