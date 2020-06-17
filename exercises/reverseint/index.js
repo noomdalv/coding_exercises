@@ -8,12 +8,32 @@
 //   reverseInt(-15) === -51
 //   reverseInt(-90) === -9
 
+// function reverseInt(n) {
+// 	let str = String(Math.abs(n))
+// 	let revInt = "";
+//
+// 	for (let i in str) {
+//       revInt = str[i] + revInt
+// 	}
+//
+//   if (n < 0) {
+//     revInt = - + revInt
+//   }
+//
+// 	return parseInt(revInt);
+// }
+
 function reverseInt(n) {
-	let revInt = "";
-	for (let index in n) {
-		revInt = index + revInt
+	const reversed = n
+		.toString()
+		.split("")
+		.reverse()
+		.join("");
+
+	if (n < 0) {
+		return parseInt(reversed * -1)
 	}
-	return parseInt(revInt)
+	return parseInt(reversed);
 }
 
 module.exports = reverseInt;
