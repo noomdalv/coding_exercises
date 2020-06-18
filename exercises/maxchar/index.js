@@ -11,13 +11,15 @@ function maxChar(str) {
   let maxCount = 0;
 
   for (let char in str) {
-    if (charObj[str[char]]) {
-      charObj[str[char]] = charObj[str[char]] + 1;
+    if (charObj[char]) {
+      charObj[char] = charObj[str[char]] + 1;
     } else {
-      charObj[str[char]] = 1;
+      charObj[char]] = 1;
     }
   }
-
+	// for (let char of str) {
+  //   charObj[char] = charObj[char] + 1 || 1;
+  // }
   for (let index in charObj) {
     if (charObj[index] > maxCount) {
       maxChar = index;
