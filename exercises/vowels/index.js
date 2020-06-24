@@ -8,11 +8,11 @@
 //   vowels('Why?') --> 0
 
 function vowels(str) {
-	let vowels = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+	let vowelArr = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
 	let count = 0;
 
 	for (let i = 0; i < str.length; i++) {
-		if (vowels.indexOf(str[i]) >= 0) {
+		if (vowelArr.indexOf(str[i]) >= 0) {
 			count++
 		}
 	}
