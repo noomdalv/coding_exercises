@@ -25,12 +25,11 @@ function memoize(fn) {
 	let cache = {};
 
 	return function(...args) {
-		if (cache[...args]) {
+		if (cache[args]) {
 			return cache[args];
 		}
-		let result = fn.apply(this, ...args);
+		let result = fn.apply(this, args);
 		cache[args] = result;
-		
 		return result;
 	}
 }
@@ -43,7 +42,7 @@ function slowFib(n) {
 	return fib(n-1) + fib(n-2);
 }
 
-fib = memoize(slowFib);
+const fib = memoize(slowFib);
 
 
 
