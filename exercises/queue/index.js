@@ -13,12 +13,16 @@ class Queue {
     this.array = [];
   }
 
-	add(x){
-		this.array.unshift(x);		
+	add(x) {
+		this.array.unshift(x);
 	}
 
-	remove(){
+	remove() {
 		return this.array.pop();
+	}
+
+	peek() {
+		return this.array[this.array.length - 1];
 	}
 }
 
