@@ -112,30 +112,30 @@ describe('RemoveLast', () => {
     expect(l.head).toEqual(null);
   });
 
-  // test('RemoveLast removes the last node when list is length 2', () => {
-  //   const l = new List();
-  //   l.insertFirst('b');
-  //   l.insertFirst('a');
-	//
-  //   l.removeLast();
-	//
-  //   expect(l.size()).toEqual(1);
-  //   expect(l.head.data).toEqual('a');
-  // });
-	//
-  // test('RemoveLast removes the last node when list is length 3', () => {
-  //   const l = new List();
-  //   l.insertFirst('c');
-  //   l.insertFirst('b');
-  //   l.insertFirst('a');
-  //   l.removeLast();
-	//
-  //   expect(l.size()).toEqual(2);
-  //   expect(l.getLast().data).toEqual('b');
-  // });
+  test('RemoveLast removes the last node when list is length 2', () => {
+    const l = new List();
+    l.insertFirst('b');
+    l.insertFirst('a');
+
+    l.removeLast();
+
+    expect(l.size()).toEqual(1);
+    expect(l.head.data).toEqual('a');
+  });
+
+  test('RemoveLast removes the last node when list is length 3', () => {
+    const l = new List();
+    l.insertFirst('c');
+    l.insertFirst('b');
+    l.insertFirst('a');
+    l.removeLast();
+
+    expect(l.size()).toEqual(2);
+    expect(l.getLast().data).toEqual('b');
+  });
 });
 
-describe.skip('InsertLast', () => {
+describe('InsertLast', () => {
   test('adds to the end of the list', () => {
     const l = new List();
     l.insertFirst('a');
@@ -147,7 +147,7 @@ describe.skip('InsertLast', () => {
   });
 });
 
-describe.skip('GetAt', () => {
+describe('GetAt', () => {
   test('returns the node at given index', () => {
     const l = new List();
     expect(l.getAt(10)).toEqual(null);
@@ -164,7 +164,7 @@ describe.skip('GetAt', () => {
   });
 });
 
-describe.skip('RemoveAt', () => {
+describe('RemoveAt', () => {
   test('removeAt doesnt crash on an empty list', () => {
     const l = new List();
     expect(() => {
@@ -217,7 +217,7 @@ describe.skip('RemoveAt', () => {
   });
 });
 
-describe.skip('InsertAt', () => {
+describe('InsertAt', () => {
   test('inserts a new node with data at the 0 index when the list is empty', () => {
     const l = new List();
     l.insertAt('hi', 0);
@@ -272,7 +272,7 @@ describe.skip('InsertAt', () => {
   });
 });
 
-describe.skip('ForEach', () => {
+describe('forEach', () => {
   test('applies a transform to each node', () => {
     const l = new List();
 
@@ -292,7 +292,7 @@ describe.skip('ForEach', () => {
   });
 });
 
-describe.skip('for...of loops', () => {
+describe('for...of loops', () => {
   test('works with the linked list', () => {
     const l = new List();
 

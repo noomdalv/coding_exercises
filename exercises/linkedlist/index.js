@@ -70,7 +70,93 @@ class LinkedList {
 		} else {
 			this.head = null;
 		}
+	}
 
+	insertLast(data) {
+		let currentNode = this.head;
+
+		if (!this.head) {
+			this.head = new Node(data);
+		} else {
+			while (currentNode.next) {
+				currentNode = currentNode.next;
+			}
+			currentNode.next = new Node(data);
+		}
+	}
+
+	getAt(index) {
+		let counter = 0;
+		let currentNode = this.head;
+
+		if (currentNode) {
+			while (counter < index) {
+				counter++;
+				currentNode = currentNode.next;
+			};
+		}
+		return currentNode;
+	}
+
+	removeAt(index) {
+		let counter = 0;
+    let currentNode = this.head;
+    let prevNode = currentNode;
+
+    while (currentNode) {
+			if (index === 0) {
+				this.head = this.head.next;
+				return;
+			}
+			if (counter === index) {
+				prevNode.next = currentNode.next;
+				break;
+			}
+			prevNode = currentNode;
+			currentNode = currentNode.next;
+			counter++
+		}
+		return this.head
+	}
+
+	insertAt(data, index) {
+		let counter = 0;
+		let currentNode = this.head;
+
+		while (currentNode) {
+			if (index === 0) {
+				this.head = new Node(data, currentNode);
+				return;
+			}
+			if (counter === index - 1 || !currentNode.next) {
+				let memNode = currentNode.next;
+				currentNode.next = new Node(data, memNode);
+				return;
+			}
+			currentNode = currentNode.next
+			counter++;
+		}
+		this.head = new Node(data);
+	}
+
+	forEach(fn) {
+		let node = this.head;
+		let counter = 0;
+
+		while (node) {
+			fn(node, counter);
+			node = node.next;
+			counter++;
+		}
+	}
+
+	*[Symbol.iterator]() {
+		let node = this.head;
+
+		while(node) {
+			yield node;
+			node = node.next;
+		}
 	}
 }
 
